@@ -457,7 +457,10 @@ class CustomOauthStorage implements
         // if (!$userInfo = $stmt->fetch(\PDO::FETCH_ASSOC)) {
         //     return false;
         // }
-
+        
+        if(!$user){
+             return false;
+         }
         // the default behavior is to use "username" as the user_id
         return array_merge(array(
             'user_id' => $user['id']
